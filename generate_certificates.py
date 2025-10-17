@@ -13,7 +13,7 @@ data = pd.read_excel("participants.xlsx")
 template = "certificate_template.png"
 
 
-font = ImageFont.truetype("DellaRespira-Regular.ttf", 33)
+font = ImageFont.truetype("DellaRespira-Regular.ttf", 110)
 text_color = (0, 0, 0)
 
 
@@ -28,7 +28,7 @@ os.makedirs("certificates", exist_ok=True)
 def generate_certificate(name):
     cert = Image.open(template).copy()
     draw = ImageDraw.Draw(cert)
-    position = (414, 226)
+    position = (1645, 1132)
     draw.text(position, name, font=font, fill=text_color, anchor="mm")
     filename = f"certificates/{name}.png"
     cert.save(filename)
@@ -48,10 +48,10 @@ with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT) as server:
 
         
         msg = EmailMessage()
-        msg["Subject"] = "Mercedes x E Labs Participation Certificate"
+        msg["Subject"] = "🤖 AI Alchemist Certificate "
         msg["From"] = SENDER_EMAIL
         msg["To"] = email
-        msg.set_content(f"Hello {name},\n\nPlease Find your Mercedes x E Labs signed certificate attached below.")
+        msg.set_content(f"Hello {name},\n\nPlease Find your AI Alchemist signed certificate attached below.")
 
         with open(filename, "rb") as f:
             msg.add_attachment(f.read(), maintype="image", subtype="png", filename=f"{name}.png")
