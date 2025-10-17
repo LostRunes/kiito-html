@@ -8,7 +8,7 @@ SMTP_PORT = 465
 
 # Recipients
 TO = ["kingpalace.25b@kiit.ac.in","kingpalace.25c@kiit.ac.in"]  # Example
-CC = [""]  # Example
+CC = ["2229060@kiit.ac.in"]  # Example
 BCC = [ "2428038@kiit.ac.in"]
 
 # Plain text message
